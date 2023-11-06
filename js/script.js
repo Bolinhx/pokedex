@@ -16,7 +16,6 @@ const fetchPokemon = async (pokemon) => {
         const data = await APIResponse.json();
         return data;
     }
-
 }
 
 const renderPokemon = async (pokemon) => {
@@ -42,8 +41,10 @@ const renderPokemon = async (pokemon) => {
 
 
 form.addEventListener('submit', (event)=>{
+    if(input.value.toLowerCase() <= 649){
     event.preventDefault();
     renderPokemon(input.value.toLowerCase());
+}
 });
 
 buttonNext.addEventListener('click', ()=>{
